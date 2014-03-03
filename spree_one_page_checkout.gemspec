@@ -11,7 +11,9 @@ Gem::Specification.new do |s|
   s.email     = 'contact@racoons-group.com'
   s.homepage  = 'http://racoons-group.com'
 
-  s.files        = Dir['LICENSE', 'README.md', 'app/**/*', 'config/**/*', 'lib/**/*', 'db/**/*']
+  s.files        = `git ls-files`.split("\n")
+  s.test_files   = `git ls-files -- {spec,features}/*`.split("\n")
+
   s.require_path = 'lib'
   s.requirements << 'none'
 
